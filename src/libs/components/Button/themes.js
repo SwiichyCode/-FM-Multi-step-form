@@ -3,6 +3,7 @@ export const theme = {
     backgroundColor: "#022959",
     hoverBackgroundColor: "#164A8A",
     color: "var(--White)",
+    focus: "2px solid #164a8a",
   },
   secondary: {
     backgroundColor: "#483EFF",

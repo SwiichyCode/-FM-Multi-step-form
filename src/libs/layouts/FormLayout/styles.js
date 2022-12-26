@@ -1,20 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-export const Form = ({ title, subtitle, id, children, ...props }) => {
-  return (
-    <Container id={id} {...props}>
-      <div className="form-header">
-        <h1>{title}</h1>
-        <p>{subtitle}</p>
-      </div>
-
-      {children}
-    </Container>
-  );
-};
-
-const Container = styled.form`
+export const Container = styled.form`
   width: 100%;
   max-width: 92%;
   height: auto;

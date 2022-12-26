@@ -1,12 +1,13 @@
 import React from "react";
-import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Navigation } from "../../layouts/Navigation";
-import { Form } from "../../layouts/Form";
+import { NavigationLayout } from "../../layouts/NavigationLayout";
+import { FormLayout } from "../../layouts/FormLayout";
 import { TextField } from "../../components/TextField";
 import { Button } from "../../components/Button";
 import { schema } from "./schema";
+import * as GS from "../styles";
+import * as S from "./styles";
 
 export const PersonalInformation = ({
   currentStep,
@@ -27,14 +28,14 @@ export const PersonalInformation = ({
   });
 
   return (
-    <Container>
-      <Form
+    <GS.Container>
+      <FormLayout
         id="personal-information"
         onSubmit={onSubmit}
         title="Personal info"
         subtitle="Please provide your name, email address, and phone number."
       >
-        <div className="form-body">
+        <S.Wrapper>
           <TextField
             name={"name"}
             label="Name"
@@ -57,29 +58,11 @@ export const PersonalInformation = ({
             register={register}
             error={errors.phone?.message}
           />
-        </div>
-      </Form>
-      <Navigation single>
+        </S.Wrapper>
+      </FormLayout>
+      <NavigationLayout single>
         <Button theme="primary" text="Next Step" form="personal-information" />
-      </Navigation>
-    </Container>
+      </NavigationLayout>
+    </GS.Container>
   );
 };
-
-// Mobile view
-const Container = styled.div`
-  position: absolute;
-  top: 99px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: calc(100vh - 99px); // remove
-
-  .form-body {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-`;

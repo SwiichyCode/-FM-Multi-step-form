@@ -8,14 +8,14 @@ export const Container = styled.div`
 `;
 
 export const StyledInput = styled.input`
-  height: 48px;
+  height: 40px;
   background-color: transparent;
   border: 1px solid #d6d9e6;
   border-radius: 8px;
   padding: 0 0 0 16px;
   box-sizing: border-box;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 18px;
   color: #022959;
   box-sizing: border-box;
@@ -24,6 +24,10 @@ export const StyledInput = styled.input`
     outline: ${(props) =>
       props.errors ? "1px solid #EE374A" : "1px solid #483eff"};
     border: none;
+  }
+
+  @media (min-width: 768px) {
+    height: 48px;
   }
 `;
 

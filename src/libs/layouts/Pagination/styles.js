@@ -9,14 +9,13 @@ const handleActive = (firstProps, secondProps) => {
 
 export const Container = styled.div`
   width: 100%;
-  height: 172px;
   display: flex;
   justify-content: center;
   gap: 16px;
   color: #ffffff;
-  background-image: url(${bgSidebarMobile});
+  /* background-image: url(${bgSidebarMobile});
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   padding-top: 32px;
 `;
 

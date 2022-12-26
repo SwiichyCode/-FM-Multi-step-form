@@ -1,11 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-export const Navigation = ({ children, single }) => {
-  return <Container single={single}>{children}</Container>;
-};
-
-const Container = styled.nav`
+export const Container = styled.nav`
   width: 100%;
   height: 72px;
   display: flex;
@@ -13,4 +8,5 @@ const Container = styled.nav`
   align-items: center;
   background: #ffffff;
   padding: 16px;
+  margin-top: 24px;
 `;

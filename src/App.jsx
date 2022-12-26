@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { Pagination } from "./libs/layouts/Pagination";
-import { PersonalInformation } from "./libs/view/PersonalInformation";
-import { SelectPlan } from "./libs/view/SelectPlan";
-import { PickAddons } from "./libs/view/PickAddons";
-import { Summary } from "./libs/view/Summary";
+import { PersonalInformation } from "./libs/views/PersonalInformation";
+import { SelectPlan } from "./libs/views/SelectPlan";
+import { PickAddons } from "./libs/views/PickAddons";
+import { Summary } from "./libs/views/Summary";
 import bgSidebarMobile from "./assets/images/bg-sidebar-mobile.svg";
 
 export const initialState = {

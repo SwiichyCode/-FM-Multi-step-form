@@ -50,13 +50,25 @@ export const App = () => {
 
   return (
     <Container>
-      <Pagination currentStep={currentStep} />
-      {components[currentStep]}
+      <MultiStepForm>
+        <Pagination currentStep={currentStep} />
+        {components[currentStep]}
+      </MultiStepForm>
     </Container>
   );
 };
 
 const Container = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #eff5ff;
+  }
+`;
+
+const MultiStepForm = styled.div`
   width: 100%;
   height: max-content;
   display: flex;
@@ -66,4 +78,16 @@ const Container = styled.div`
   background: #eff5ff;
   background-image: url(${bgSidebarMobile});
   background-repeat: no-repeat;
+  background-size: contain;
+
+  @media (min-width: 768px) {
+    max-width: 940px;
+    height: 600px;
+    flex-direction: initial;
+    background-image: none;
+    background: #fff;
+    border-radius: 15px;
+    padding: 16px;
+    box-shadow: 0px 25px 40px -20px rgba(0, 0, 0, 0.0951141);
+  }
 `;

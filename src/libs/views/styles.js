@@ -10,4 +10,8 @@ export const Container = styled.div`
     active
       ? "calc(100vh - 99px + 24px)"
       : "calc(100vh - 99px)"}; // 99px is the height of the header
+
+  @media (min-width: 768px) {
+    height: 100%;
+  }
 `;

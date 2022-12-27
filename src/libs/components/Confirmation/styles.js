@@ -13,18 +13,33 @@ export const Container = styled.div`
   border-radius: 10px;
   padding: 0 24px;
 
+  @media (min-width: 768px) {
+    box-shadow: none;
+    height: 100%;
+  }
+
   img {
     width: 56px;
     margin-bottom: 24px;
+
+    @media (min-width: 768px) {
+      width: 80px;
+      margin-bottom: 32px;
+    }
   }
 
   h1 {
     font-weight: 700;
     font-size: 2.4rem;
     line-height: 2.8rem;
-
     color: #022959;
     margin-bottom: 9px;
+
+    @media (min-width: 768px) {
+      font-size: 3.2rem;
+      line-height: 3.6rem;
+      margin-bottom: 14px;
+    }
   }
 
   p {

@@ -23,6 +23,11 @@ export const Container = styled.div`
         line-height: 1.6rem;
         color: #022959;
         text-transform: capitalize;
+
+        @media (min-width: 768px) {
+          font-size: 1.6rem;
+          line-height: 1.8rem;
+        }
       }
 
       span {
@@ -39,6 +44,11 @@ export const Container = styled.div`
       font-size: 1.4rem;
       line-height: 2rem;
       color: #022959;
+
+      @media (min-width: 768px) {
+        font-size: 1.6rem;
+        line-height: 2rem;
+      }
     }
   }
 

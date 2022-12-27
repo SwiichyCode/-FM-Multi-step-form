@@ -6,6 +6,10 @@ export const Price = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media (min-width: 768px) {
+    max-width: 95%;
+  }
+
   h2 {
     font-weight: 400;
     font-size: 1.4rem;
@@ -19,5 +23,9 @@ export const Price = styled.div`
     line-height: 2rem;
     text-align: right;
     color: #483eff;
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
   }
 `;

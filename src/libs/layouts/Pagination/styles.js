@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import bgSidebarDesktop from "../../../assets/images/bg-sidebar-desktop.svg";
-import bgSidebarMobile from "../../../assets/images/bg-sidebar-mobile.svg";
 
 const handleActive = (firstProps, secondProps) => {
   if (firstProps === secondProps)
@@ -13,14 +12,26 @@ export const Container = styled.div`
   justify-content: center;
   gap: 16px;
   color: #ffffff;
-  /* background-image: url(${bgSidebarMobile});
-  background-repeat: no-repeat;
-  background-size: cover; */
   padding-top: 32px;
+
+  @media (min-width: 768px) {
+    max-width: 274px;
+    height: 568px;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 32px;
+    border-radius: 10px;
+    padding: 40px 32px 0 32px;
+    background-image: url(${bgSidebarDesktop});
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `;
 
 export const Box = styled.div`
+  display: flex;
   height: min-content;
+  gap: 16px;
 
   .item-index {
     width: 33px;
@@ -38,10 +49,14 @@ export const Box = styled.div`
     ${(props) => handleActive(props.currentStep, props.index)}
   }
 
-  /* .item-box {
-    display: flex;
+  .item-box {
+    display: none;
     flex-direction: column;
     gap: 4px;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
 
     .item-step {
       font-weight: 400;
@@ -57,5 +72,5 @@ export const Box = styled.div`
       text-transform: uppercase;
       color: #ffffff;
     }
-  } */
+  }
 `;

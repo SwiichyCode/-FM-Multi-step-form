@@ -4,6 +4,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+  @media (min-width: 768px) {
+    flex-direction: initial;
+    gap: 18px;
+  }
 `;
 
 export const Card = styled.div`
@@ -17,6 +22,15 @@ export const Card = styled.div`
   gap: 14px;
   user-select: none;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 138px;
+    height: 183px;
+    gap: initial;
+    padding: 20px 0 16px 16px;
+  }
 
   img {
     width: 100%;

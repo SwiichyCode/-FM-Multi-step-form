@@ -14,10 +14,10 @@ export const Pagination = ({ currentStep }) => {
         return (
           <S.Box key={index} currentStep={currentStep} index={index}>
             <span className="item-index">{index + 1}</span>
-            {/* <div className="item-box">
+            <div className="item-box">
               <span className="item-step">{step}</span>
               <h2 className="item-title">{title}</h2>
-            </div> */}
+            </div>
           </S.Box>
         );
       })}

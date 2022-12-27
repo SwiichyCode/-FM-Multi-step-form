@@ -12,16 +12,35 @@ export const Container = styled.form`
   border-radius: 10px;
   padding: 32px 24px;
 
+  @media (min-width: 768px) {
+    width: 100%;
+    max-width: 450px;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: none;
+    margin-top: 40px;
+    padding: 0;
+  }
+
   .form-header {
     display: flex;
     flex-direction: column;
     gap: 9px;
+
+    @media (min-width: 768px) {
+      gap: 11px;
+    }
 
     h1 {
       font-weight: 700;
       font-size: 2.4rem;
       line-height: 2.8rem;
       color: #022959;
+
+      @media (min-width: 768px) {
+        font-size: 3.2rem;
+        line-height: 3.6rem;
+      }
     }
 
     p {

@@ -65,6 +65,7 @@ const Container = styled.div`
     align-items: center;
     height: 100vh;
     background: #eff5ff;
+    padding: 1em;
   }
 `;
 

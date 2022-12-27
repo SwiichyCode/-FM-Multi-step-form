@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import * as S from "./styles";
 
 export const CardPicker = ({ cards, monthlyOn, handleSelect }) => {
@@ -22,4 +22,18 @@ export const CardPicker = ({ cards, monthlyOn, handleSelect }) => {
       })}
     </S.Container>
   );
+};
+
+CardPicker.propTypes = {
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      img: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      selected: PropTypes.bool.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  monthlyOn: PropTypes.bool.isRequired,
+  handleSelect: PropTypes.func.isRequired,
 };

@@ -1,5 +1,5 @@
-import * as S from "./styles.js";
 import PropTypes from "prop-types";
+import * as S from "./styles.js";
 
 export const TextField = ({
   label,

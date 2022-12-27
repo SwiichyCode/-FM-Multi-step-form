@@ -1,7 +1,7 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { Button } from "../Button";
-import * as S from "./styles.js";
 import IconThankYou from "../../../assets/images/icon-thank-you.svg";
+import * as S from "./styles.js";
 
 export const Confirmation = ({ handleReset }) => {
   return (
@@ -16,4 +16,8 @@ export const Confirmation = ({ handleReset }) => {
       <Button text="Go Back" theme="default" onClick={handleReset} />
     </S.Container>
   );
+};
+
+Confirmation.propTypes = {
+  handleReset: PropTypes.func.isRequired,
 };

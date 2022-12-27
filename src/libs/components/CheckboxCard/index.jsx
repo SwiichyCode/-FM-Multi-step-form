@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Checkbox } from "../Checkbox";
 import * as S from "./styles.js";
 
@@ -18,4 +19,11 @@ export const CheckboxCard = ({ checked, title, subtitle, price, ...props }) => {
       </div>
     </S.Container>
   );
+};
+
+CheckboxCard.propTypes = {
+  checked: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
 };

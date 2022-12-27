@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { FormLayout } from "../../layouts/FormLayout";
 import { NavigationLayout } from "../../layouts/NavigationLayout";
@@ -90,4 +91,11 @@ export const PickAddons = ({
       </NavigationLayout>
     </GS.Container>
   );
+};
+
+PickAddons.propTypes = {
+  currentStep: PropTypes.number.isRequired,
+  setCurrentStep: PropTypes.func.isRequired,
+  formData: PropTypes.object.isRequired,
+  setFormData: PropTypes.func.isRequired,
 };

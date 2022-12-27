@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { FormLayout } from "../../layouts/FormLayout";
 import { NavigationLayout } from "../../layouts/NavigationLayout";
@@ -75,4 +76,11 @@ export const SelectPlan = ({
       </NavigationLayout>
     </GS.Container>
   );
+};
+
+SelectPlan.propTypes = {
+  currentStep: PropTypes.number.isRequired,
+  setCurrentStep: PropTypes.func.isRequired,
+  formData: PropTypes.object.isRequired,
+  setFormData: PropTypes.func.isRequired,
 };

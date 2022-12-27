@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import * as S from "./styles.js";
 
 export const Pagination = ({ currentStep }) => {
@@ -23,4 +23,9 @@ export const Pagination = ({ currentStep }) => {
       })}
     </S.Container>
   );
+};
+
+Pagination.propTypes = {
+  currentIndex: PropTypes.number.isRequired,
+  resetStorage: PropTypes.bool,
 };

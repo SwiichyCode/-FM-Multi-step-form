@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { ToggleSwitch } from "../ToggleSwitch";
 import * as S from "./styles";
 
@@ -14,4 +14,9 @@ export const ToggleOptions = ({ monthlyOn, handleToggle }) => {
       </S.Option>
     </S.Container>
   );
+};
+
+ToggleOptions.propTypes = {
+  monthlyOn: PropTypes.bool,
+  handleToggle: PropTypes.func,
 };

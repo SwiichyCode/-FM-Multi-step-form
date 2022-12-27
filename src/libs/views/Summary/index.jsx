@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { initialState } from "../../../App";
 import { NavigationLayout } from "../../layouts/NavigationLayout";
@@ -72,4 +73,11 @@ export const Summary = ({
       <Confirmation handleReset={handleReset} />
     </GS.Container>
   );
+};
+
+Summary.propTypes = {
+  currentStep: PropTypes.number.isRequired,
+  setCurrentStep: PropTypes.func.isRequired,
+  formData: PropTypes.object.isRequired,
+  setFormData: PropTypes.func.isRequired,
 };

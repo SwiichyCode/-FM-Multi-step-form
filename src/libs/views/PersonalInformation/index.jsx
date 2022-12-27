@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { NavigationLayout } from "../../layouts/NavigationLayout";
@@ -65,4 +65,10 @@ export const PersonalInformation = ({
       </NavigationLayout>
     </GS.Container>
   );
+};
+
+PersonalInformation.propTypes = {
+  currentStep: PropTypes.number.isRequired,
+  setCurrentStep: PropTypes.func.isRequired,
+  setFormData: PropTypes.func.isRequired,
 };

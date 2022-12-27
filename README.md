@@ -37,10 +37,10 @@ Users should be able to:
 
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [react-hook-form](https://nextjs.org/) - Form Builder
-- [yup](https://nextjs.org/) - Schema Builder
+- [react-hook-form](https://react-hook-form.com/) - Form Builder
+- [yup](https://www.npmjs.com/package/yup) - Schema Builder
 - [styled-components](https://styled-components.com/) - For styles
-- [prop-types](https://styled-components.com/) - For props type
+- [prop-types](https://www.npmjs.com/package/prop-types) - For props type
 
 ## Author
 

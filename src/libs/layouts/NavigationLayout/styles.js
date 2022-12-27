@@ -9,4 +9,9 @@ export const Container = styled.nav`
   background: #ffffff;
   padding: 16px;
   margin-top: 24px;
+
+  @media (min-width: 768px) {
+    max-width: 450px;
+    padding: 0;
+  }
 `;

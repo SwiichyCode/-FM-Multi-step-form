@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useLocalStorage } from "./hooks/useLocalStorage";
 import { Pagination } from "./libs/layouts/Pagination";
 import { PersonalInformation } from "./libs/views/PersonalInformation";
 import { SelectPlan } from "./libs/views/SelectPlan";
@@ -17,10 +16,8 @@ export const initialState = {
 };
 
 export const App = () => {
-  const [formData, setFormData] = useLocalStorage("form-data", initialState);
-  const [currentStep, setCurrentStep] = useLocalStorage("form-index", 0);
-
-  console.log(formData);
+  const [formData, setFormData] = useState(initialState);
+  const [currentStep, setCurrentStep] = useState(0);
 
   const components = [
     <PersonalInformation

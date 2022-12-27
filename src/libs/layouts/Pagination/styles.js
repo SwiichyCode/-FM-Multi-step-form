@@ -6,7 +6,7 @@ const handleActive = (firstProps, secondProps) => {
     return "background-color: #BEE2FD; color: #022959; border: none; width: 35px; height: 35px;";
 };
 
-export const Container = styled.div`
+export const Container = styled.nav`
   width: 100%;
   display: flex;
   justify-content: center;

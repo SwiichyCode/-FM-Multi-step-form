@@ -9,7 +9,7 @@ export const Pagination = ({ currentStep }) => {
     { index: 3, step: "STEP 4", title: "SUMMARY" },
   ];
   return (
-    <S.Container role={"navigation"}>
+    <S.Container>
       {items.map(({ index, step, title }) => {
         return (
           <S.Box key={index} currentStep={currentStep} index={index}>

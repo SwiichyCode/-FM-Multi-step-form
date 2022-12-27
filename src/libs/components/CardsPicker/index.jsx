@@ -23,9 +23,14 @@ export const CardPicker = ({
   }, []);
   return (
     <S.Container>
-      {cards.map(({ img, title, price, selected, id }) => {
+      {cards.map(({ img, title, price, selected, id }, index) => {
         return (
-          <S.Card selected={selected} key={id} onClick={() => handleSelect(id)}>
+          <S.Card
+            selected={selected}
+            key={id}
+            onClick={() => handleSelect(id)}
+            tabIndex={index + 1}
+          >
             <img src={img} alt="" />
             <S.Box>
               <h2>{title}</h2>

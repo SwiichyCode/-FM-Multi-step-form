@@ -20,8 +20,6 @@ export const App = () => {
   const [formData, setFormData] = useLocalStorage("form-data", initialState);
   const [currentStep, setCurrentStep] = useLocalStorage("form-index", 0);
 
-  console.log(formData);
-
   const components = [
     <PersonalInformation
       currentStep={currentStep}
@@ -50,8 +48,8 @@ export const App = () => {
   ];
 
   return (
-    <Container role={"application"}>
-      <MultiStepForm role={"main"}>
+    <Container>
+      <MultiStepForm>
         <Pagination currentStep={currentStep} />
         {components[currentStep]}
       </MultiStepForm>

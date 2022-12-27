@@ -64,7 +64,7 @@ export const PickAddons = ({
   };
 
   return (
-    <GS.Container role="form">
+    <GS.Container>
       <FormLayout
         id="pick-addons"
         onSubmit={onSubmit}

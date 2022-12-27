@@ -18,6 +18,7 @@ export const SelectPlan = ({
 }) => {
   const [cards, setCards] = useState(initialStateCard);
   const [monthlyOn, setMonthlyOn, handleToggle] = useToggle(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSelect = (id) => {
     const newItems = cards.map((item) => {
@@ -30,6 +31,7 @@ export const SelectPlan = ({
       return { ...item, selected: false };
     });
     setCards(newItems);
+    setErrorMessage("");
   };
 
   const onSubmit = (e) => {
@@ -72,6 +74,7 @@ export const SelectPlan = ({
             handleSelect={handleSelect}
           />
           <ToggleOptions monthlyOn={monthlyOn} handleToggle={handleToggle} />
+          {errorMessage && <S.ErrorMessage>{errorMessage}</S.ErrorMessage>}
         </S.Wrapper>
       </FormLayout>
       <NavigationLayout>

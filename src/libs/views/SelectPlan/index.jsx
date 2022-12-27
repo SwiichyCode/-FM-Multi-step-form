@@ -58,7 +58,7 @@ export const SelectPlan = ({
   }, []);
 
   return (
-    <GS.Container active>
+    <GS.Container active role="form">
       <FormLayout
         id="select-plan"
         onSubmit={onSubmit}

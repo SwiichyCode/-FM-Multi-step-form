@@ -39,7 +39,7 @@ export const PersonalInformation = ({
   }, []);
 
   return (
-    <GS.Container>
+    <GS.Container role="form">
       <FormLayout
         id="personal-information"
         onSubmit={onSubmit}

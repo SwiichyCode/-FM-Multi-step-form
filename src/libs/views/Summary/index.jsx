@@ -46,7 +46,7 @@ export const Summary = ({
     setCurrentStep(1);
   };
   return !submit ? (
-    <GS.Container>
+    <GS.Container role="form">
       <FormLayout
         id="summary"
         onSubmit={handleSubmit}
@@ -77,7 +77,7 @@ export const Summary = ({
       </NavigationLayout>
     </GS.Container>
   ) : (
-    <GS.Container>
+    <GS.Container role={"alertdialog"}>
       <Confirmation handleReset={handleReset} />
     </GS.Container>
   );

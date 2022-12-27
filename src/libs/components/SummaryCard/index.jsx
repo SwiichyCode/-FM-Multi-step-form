@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import * as S from "./styles.js";
 
-export const SummaryCard = ({ plan, addons, monthOrYear }) => {
+export const SummaryCard = ({ plan, addons, monthOrYear, handleChange }) => {
   const { title, duration, price } = plan;
 
   return (
@@ -11,7 +11,7 @@ export const SummaryCard = ({ plan, addons, monthOrYear }) => {
           <h1>
             {title} ({duration})
           </h1>
-          <span>Change</span>
+          <span onClick={handleChange}>Change</span>
         </div>
         <div className="header-right">
           <span>

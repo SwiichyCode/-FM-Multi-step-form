@@ -42,6 +42,9 @@ export const Summary = ({
     setCurrentStep(0);
   };
 
+  const handleChange = () => {
+    setCurrentStep(1);
+  };
   return !submit ? (
     <GS.Container>
       <FormLayout
@@ -51,7 +54,12 @@ export const Summary = ({
         subtitle="Double-check everything looks OK before confirming."
       >
         <S.Wrapper>
-          <SummaryCard plan={plan} addons={addons} monthOrYear={monthOrYear} />
+          <SummaryCard
+            plan={plan}
+            addons={addons}
+            monthOrYear={monthOrYear}
+            handleChange={handleChange}
+          />
           <TotalPrice
             duration={duration}
             monthOrYear={monthOrYear}

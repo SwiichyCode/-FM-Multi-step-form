@@ -50,8 +50,8 @@ export const App = () => {
   ];
 
   return (
-    <Container>
-      <MultiStepForm>
+    <Container role={"application"}>
+      <MultiStepForm role={"main"}>
         <Pagination currentStep={currentStep} />
         {components[currentStep]}
       </MultiStepForm>

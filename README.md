@@ -8,13 +8,8 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+  - [Author](#author)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -46,8 +41,6 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://mtf-mobile-first.vercel.app/)
 
-## My process
-
 ### Built with
 
 - Mobile-first workflow
@@ -56,14 +49,6 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - [yup](https://nextjs.org/) - Schema Builder
 - [styled-components](https://styled-components.com/) - For styles
 - [prop-types](https://styled-components.com/) - For props type
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ## Author
 

@@ -1,28 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Pagination } from "./libs/layouts/Pagination";
 import { PersonalInformation } from "./libs/views/PersonalInformation";
 import { SelectPlan } from "./libs/views/SelectPlan";
 import { PickAddons } from "./libs/views/PickAddons";
 import { Summary } from "./libs/views/Summary";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 import bgSidebarMobile from "./assets/images/bg-sidebar-mobile.svg";
 
 export const initialState = {
   name: "",
-  emailAddress: "",
-  phoneNumber: "",
+  email: "",
+  phone: "",
   plan: { title: "", price: 0, selected: false, duration: "" },
   addons: [{ title: "", subtitle: "", price: 0, checked: false }],
 };
 
 export const App = () => {
-  const [formData, setFormData] = useState(initialState);
-  const [currentStep, setCurrentStep] = useState(0);
+  const [formData, setFormData] = useLocalStorage("form-data", initialState);
+  const [currentStep, setCurrentStep] = useLocalStorage("form-index", 0);
+
+  console.log(formData);
 
   const components = [
     <PersonalInformation
       currentStep={currentStep}
       setCurrentStep={setCurrentStep}
+      formData={formData}
       setFormData={setFormData}
     />,
     <SelectPlan

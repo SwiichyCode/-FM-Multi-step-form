@@ -26,6 +26,5 @@ export const Pagination = ({ currentStep }) => {
 };
 
 Pagination.propTypes = {
-  currentIndex: PropTypes.number.isRequired,
-  resetStorage: PropTypes.bool,
+  currentStep: PropTypes.number.isRequired,
 };

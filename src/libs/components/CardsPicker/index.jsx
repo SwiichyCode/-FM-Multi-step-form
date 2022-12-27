@@ -1,7 +1,26 @@
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import * as S from "./styles";
 
-export const CardPicker = ({ cards, monthlyOn, handleSelect }) => {
+export const CardPicker = ({
+  cards,
+  setCards,
+  formData,
+  monthlyOn,
+  handleSelect,
+}) => {
+  useEffect(() => {
+    const updatedData = cards.map((item) => {
+      if (formData.plan && item.title === formData.plan.title) {
+        return {
+          ...item,
+          selected: true,
+        };
+      }
+      return item;
+    });
+    setCards(updatedData);
+  }, []);
   return (
     <S.Container>
       {cards.map(({ img, title, price, selected, id }) => {
@@ -31,7 +50,7 @@ CardPicker.propTypes = {
       title: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
       selected: PropTypes.bool.isRequired,
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
     })
   ).isRequired,
   monthlyOn: PropTypes.bool.isRequired,

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { NavigationLayout } from "../../layouts/NavigationLayout";
@@ -12,20 +13,30 @@ import * as S from "./styles";
 export const PersonalInformation = ({
   currentStep,
   setCurrentStep,
+  formData,
   setFormData,
 }) => {
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = handleSubmit((data) => {
-    setFormData(data);
+  const onSubmit = handleSubmit(({ name, email, phone }) => {
+    setFormData({ ...formData, name: name, email: email, phone: phone });
     setCurrentStep(currentStep + 1);
   });
+
+  useEffect(() => {
+    reset({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+    });
+  }, []);
 
   return (
     <GS.Container>

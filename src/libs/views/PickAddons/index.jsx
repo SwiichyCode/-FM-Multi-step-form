@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { FormLayout } from "../../layouts/FormLayout";
 import { NavigationLayout } from "../../layouts/NavigationLayout";
 import { CheckboxCard } from "../../components/CheckboxCard";
@@ -17,20 +17,6 @@ export const PickAddons = ({
   const [addons, setAddons] = useState(initialStateAddons);
   const duration = formData.plan.duration;
 
-  useEffect(() => {
-    const updatedData = addons.map((item) => {
-      return {
-        ...item,
-        price: duration === "monthly" ? item.price : item.price * 10,
-      };
-    });
-    setAddons(updatedData);
-
-    return () => {
-      setAddons(initialStateAddons);
-    };
-  }, []);
-
   const handleOnChange = (index) => {
     const updatedData = addons.map((item, i) => {
       if (i === index) {
@@ -43,6 +29,29 @@ export const PickAddons = ({
     });
     setAddons(updatedData);
   };
+
+  const calculatePrice = (item, duration) => {
+    return duration === "monthly" ? item.price : item.price * 10;
+  };
+
+  if (formData.addons) {
+    const updatedData = useMemo(() => {
+      return addons.map((item) => {
+        const isChecked = formData.addons.some(
+          (addon) => addon.title === item.title
+        );
+        return {
+          ...item,
+          price: calculatePrice(item, duration),
+          checked: isChecked,
+        };
+      });
+    }, []);
+
+    useEffect(() => {
+      setAddons(updatedData);
+    }, [updatedData]);
+  }
 
   const onSubmit = (e) => {
     e.preventDefault();

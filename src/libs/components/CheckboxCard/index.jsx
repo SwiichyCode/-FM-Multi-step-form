@@ -3,6 +3,8 @@ import { Checkbox } from "../Checkbox";
 import * as S from "./styles.js";
 
 export const CheckboxCard = ({ checked, title, subtitle, price, ...props }) => {
+  // update the state of the checkbox
+
   return (
     <S.Container checked={checked}>
       <div className="left-side">

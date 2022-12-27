@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FormLayout } from "../../layouts/FormLayout";
 import { NavigationLayout } from "../../layouts/NavigationLayout";
 import { initialStateCard } from "./stores";
@@ -17,7 +17,7 @@ export const SelectPlan = ({
   setFormData,
 }) => {
   const [cards, setCards] = useState(initialStateCard);
-  const [monthlyOn, handleToggle] = useToggle(false);
+  const [monthlyOn, setMonthlyOn, handleToggle] = useToggle(false);
 
   const handleSelect = (id) => {
     const newItems = cards.map((item) => {
@@ -49,6 +49,12 @@ export const SelectPlan = ({
     setCurrentStep(currentStep + 1);
   };
 
+  useEffect(() => {
+    formData.plan && formData.plan.duration === "yearly"
+      ? setMonthlyOn(true)
+      : setMonthlyOn(false);
+  }, []);
+
   return (
     <GS.Container active>
       <FormLayout
@@ -60,6 +66,8 @@ export const SelectPlan = ({
         <S.Wrapper>
           <CardPicker
             cards={cards}
+            setCards={setCards}
+            formData={formData}
             monthlyOn={monthlyOn}
             handleSelect={handleSelect}
           />

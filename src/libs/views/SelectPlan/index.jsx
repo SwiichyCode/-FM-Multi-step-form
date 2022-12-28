@@ -34,6 +34,20 @@ export const SelectPlan = ({
     setErrorMessage("");
   };
 
+  const handleClick = () => {
+    const selectedItem = cards.find((item) => item.selected);
+    setFormData({
+      ...formData,
+      plan: {
+        title: selectedItem.title,
+        price: monthlyOn ? selectedItem.price * 10 : selectedItem.price,
+        duration: monthlyOn ? "yearly" : "monthly",
+      },
+    });
+
+    setCurrentStep(currentStep - 1);
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -55,7 +69,7 @@ export const SelectPlan = ({
     formData.plan && formData.plan.duration === "yearly"
       ? setMonthlyOn(true)
       : setMonthlyOn(false);
-  }, []);
+  }, [formData.plan]);
 
   return (
     <GS.Container active>
@@ -78,11 +92,7 @@ export const SelectPlan = ({
         </S.Wrapper>
       </FormLayout>
       <NavigationLayout>
-        <Button
-          theme="default"
-          text="Go Back"
-          onClick={() => setCurrentStep(currentStep - 1)}
-        />
+        <Button theme="default" text="Go Back" onClick={handleClick} />
         <Button theme="primary" text="Next Step" form="select-plan" />
       </NavigationLayout>
     </GS.Container>

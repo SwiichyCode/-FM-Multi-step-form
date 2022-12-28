@@ -8,10 +8,11 @@ export const CheckboxCard = ({
   subtitle,
   price,
   addons,
+  index,
   ...props
 }) => {
   return (
-    <S.Container checked={checked}>
+    <S.Container checked={checked} tabIndex={0}>
       <div className="left-side">
         <label>
           <Checkbox checked={checked} {...props} />

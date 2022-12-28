@@ -53,6 +53,15 @@ export const PickAddons = ({
     }, [updatedData]);
   }
 
+  const handleClick = () => {
+    const selectedAddOns = addons.filter((item) => item.checked);
+    setFormData({
+      ...formData,
+      addons: selectedAddOns,
+    });
+    setCurrentStep(currentStep - 1);
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     const selectedAddOns = addons.filter((item) => item.checked);
@@ -85,17 +94,14 @@ export const PickAddons = ({
                     : `+${item.price}/yr`
                 }
                 key={index}
+                tabIndex={index + 1}
               />
             );
           })}
         </S.Wrapper>
       </FormLayout>
       <NavigationLayout>
-        <Button
-          theme="default"
-          text="Go Back"
-          onClick={() => setCurrentStep(currentStep - 1)}
-        />
+        <Button theme="default" text="Go Back" onClick={handleClick} />
         <Button theme="primary" text="Next Step" form="pick-addons" />
       </NavigationLayout>
     </GS.Container>

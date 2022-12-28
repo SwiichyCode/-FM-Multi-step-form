@@ -11,7 +11,9 @@ export const SummaryCard = ({ plan, addons, monthOrYear, handleChange }) => {
           <h1>
             {title} ({duration})
           </h1>
-          <span onClick={handleChange}>Change</span>
+          <span onClick={handleChange} tabIndex={0}>
+            Change
+          </span>
         </div>
         <div className="header-right">
           <span>

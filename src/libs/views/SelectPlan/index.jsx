@@ -30,6 +30,7 @@ export const SelectPlan = ({
       }
       return { ...item, selected: false };
     });
+
     setCards(newItems);
     setErrorMessage("");
   };
@@ -69,6 +70,17 @@ export const SelectPlan = ({
     formData.plan && formData.plan.duration === "yearly"
       ? setMonthlyOn(true)
       : setMonthlyOn(false);
+
+    const updatedData = cards.map((item) => {
+      if (formData.plan && item.title === formData.plan.title) {
+        return {
+          ...item,
+          selected: true,
+        };
+      }
+      return item;
+    });
+    setCards(updatedData);
   }, [formData.plan]);
 
   return (

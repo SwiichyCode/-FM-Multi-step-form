@@ -1,26 +1,7 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
 import * as S from "./styles";
 
-export const CardPicker = ({
-  cards,
-  setCards,
-  formData,
-  monthlyOn,
-  handleSelect,
-}) => {
-  useEffect(() => {
-    const updatedData = cards.map((item) => {
-      if (formData.plan && item.title === formData.plan.title) {
-        return {
-          ...item,
-          selected: true,
-        };
-      }
-      return item;
-    });
-    setCards(updatedData);
-  }, []);
+export const CardPicker = ({ cards, monthlyOn, handleSelect }) => {
   return (
     <S.Container>
       {cards.map(({ img, title, price, selected, id }, index) => {

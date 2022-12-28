@@ -15,3 +15,9 @@ export const Container = styled.div`
     height: 100%;
   }
 `;
+
+export const ColumnWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ gap }) => gap || "24px"};
+`;

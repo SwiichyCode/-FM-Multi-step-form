@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Pagination } from "./libs/layouts/Pagination";
+import { Pagination } from "./libs/components/Pagination";
 import { PersonalInformation } from "./libs/views/PersonalInformation";
 import { SelectPlan } from "./libs/views/SelectPlan";
 import { PickAddons } from "./libs/views/PickAddons";

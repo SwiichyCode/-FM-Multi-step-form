@@ -2,7 +2,14 @@ import PropTypes from "prop-types";
 import { Checkbox } from "../Checkbox";
 import * as S from "./styles.js";
 
-export const CheckboxCard = ({ checked, title, subtitle, price, ...props }) => {
+export const CheckboxCard = ({
+  checked,
+  title,
+  subtitle,
+  price,
+  addons,
+  ...props
+}) => {
   return (
     <S.Container checked={checked}>
       <div className="left-side">

@@ -12,7 +12,11 @@ export const ToggleSwitch = ({ isOn, handleToggle }) => {
         id={`react-switch-new`}
         type="checkbox"
       />
-      <label className="react-switch-label" htmlFor={`react-switch-new`}>
+      <label
+        className="react-switch-label"
+        htmlFor={`react-switch-new`}
+        tabIndex={4}
+      >
         <span className={`react-switch-button`} />
       </label>
     </S.ToggleSwitchContainer>

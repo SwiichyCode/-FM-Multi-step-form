@@ -8,7 +8,7 @@ export const ToggleOptions = ({ monthlyOn, handleToggle }) => {
       <S.Option style={{ color: monthlyOn ? "#9699AA" : "#022959" }}>
         Monthly
       </S.Option>
-      <ToggleSwitch isOn={monthlyOn} handleToggle={handleToggle} />
+      <ToggleSwitch isOn={monthlyOn} handleToggle={handleToggle} tab={0} />
       <S.Option style={{ color: monthlyOn ? "#022959" : "#9699AA" }}>
         Yearly
       </S.Option>
